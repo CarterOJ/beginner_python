@@ -3,7 +3,7 @@
 **This Repo features the following scripts:**
 
 1. `calculator.py`
-    - Rudimentary CLI calculator that accepts two operators and an operation.
+    - Rudimentary CLI calculator that accepts two operands and an operator.
 
 2. `fizzbuzz.py`
     - A user-centric approach to the classic FizzBuzz program.
