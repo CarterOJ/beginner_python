@@ -7,13 +7,6 @@ def binary_operation(op_one, op_two, operator):
         return op_one * op_two
     else:
         return op_one / op_two
-    
-def is_int(num):
-    try:
-        int(num)
-        return True
-    except ValueError:
-        return False
 
 def main():
     print("To use the calculator, please adhere to the following format: [int] '+'||'-'||'*'||'/' [int].")
@@ -25,9 +18,9 @@ def main():
         params = user_in.split()
         if len(params) != 3:
             print("There must be exactly three arguments!")
-        elif not is_int(params[0]):
+        elif not params[0].isdigit():
             print(f"{params[0]} is not an integer!")
-        elif not is_int(params[2]):
+        elif not params[2].isdigit():
             print(f"{params[2]} is not an integer!")
         elif params[1] not in "+-*/":
             print(f"{params[1]} is not a valid operator!")
