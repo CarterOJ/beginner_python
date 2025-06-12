@@ -20,7 +20,7 @@ def main():
         elif " " in iters.strip():
             print("Can only accept one argument!")
         elif not iters.strip().isdigit():
-            print("Input must be an integer!")
+            print("Input must be a positive integer!")
         else:
             print(fizzbuzz(int(iters)))
 
