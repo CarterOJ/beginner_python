@@ -12,10 +12,10 @@ def main():
             elif not guess.strip().isdigit():
                 guess = input("Input must be an integer! Guess again: ")
             else:
-                guess = int(guess)
-                if guess < 1 or guess > 100:
+                num_guess = int(guess)
+                if num_guess < 1 or num_guess > 100:
                     guess = input("The magic number is between 1 & 100! Guess again: ")
-                elif magic_number != guess:
+                elif magic_number != num_guess:
                     guess = input("Not quite! Guess again: ")
                 else:
                     print("You got it! Let's play again.")
