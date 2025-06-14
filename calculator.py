@@ -17,8 +17,8 @@ def main():
         if user_in.lower().strip() == "q":
             print("Exiting calculator")
             break
-        params: list[str] = re.findall(r'-?\d+[a-zA-Z]*|[+\-*/]', user_in.replace(" ", ""))
-        if len(params) == 2 and params[1].startswith("-"):
+        params: list[str] = re.findall(r'(?:^|(?<=[+\-*/]))-?\w+(?:\.\w+)?|[+\-*/]', user_in.replace(" ", ""))
+        if len(params) == 2 and params[1].startswith("-1-"):
             params.append(params[1][1:])
             params[1] = "-"
         if len(params) != 3:
