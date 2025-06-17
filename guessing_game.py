@@ -6,6 +6,7 @@ def main():
         guess = input("I am thinking of a number 1-100. Take a guess or type 'Q' to quit: ")
         while True:  
             if guess.strip().lower() == "q":
+                print("Exiting guessing game")
                 break
             elif " " in guess.strip():
                 guess = input("Can only accept one argument at a time! Guess again: ")
@@ -20,9 +21,6 @@ def main():
                 else:
                     print("You got it! Let's play again.")
                     break
-        if guess.strip().lower() == "q":
-            print("Exiting guessing game")
-            break
 
 if __name__ == "__main__":
     main()
