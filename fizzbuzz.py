@@ -14,12 +14,13 @@ def fizzbuzz(n):
 def main():
     while True:
         iters = input("Please enter the iteration amount to fizzbuzz. Type 'Q' to quit: ")
-        if iters.strip().lower() == "q":
+        trimmed = iters.strip()
+        if trimmed.lower() == "q":
             print("Exiting fizzbuzz")
             break
-        elif " " in iters.strip():
+        elif " " in trimmed:
             print("Can only accept one argument!")
-        elif not iters.strip().isdigit():
+        elif not trimmed.isdigit():
             print("Input must be a positive integer!")
         else:
             print(fizzbuzz(int(iters)))

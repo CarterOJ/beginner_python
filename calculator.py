@@ -18,9 +18,6 @@ def main():
             print("Exiting calculator")
             break
         params: list[str] = re.findall(r'(?:^|(?<=[+\-*/]))-?\w+(?:\.\w+)?|[+\-*/]', user_in.replace(" ", ""))
-        if len(params) == 2 and params[1].startswith("-1-"):
-            params.append(params[1][1:])
-            params[1] = "-"
         if len(params) != 3:
             print("There must be exactly three arguments!")
         elif not params[0].lstrip('-').isdigit():
@@ -33,10 +30,7 @@ def main():
             print("Undefined")
         else:
             result = binary_operation(int(params[0]), int(params[2]), params[1])
-            if result.is_integer():
-                print(f"Result: {int(result)}")
-            else:
-                print(f"Result: {result}")
+            print(f"Result: {int(result) if result.is_integer() else result}")
 
 if __name__ == "__main__":
     main()

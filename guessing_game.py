@@ -4,13 +4,14 @@ def main():
     while True:
         magic_number = random.randint(1, 100)
         guess = input("I am thinking of a number 1-100. Take a guess or type 'Q' to quit: ")
-        while True:  
-            if guess.strip().lower() == "q":
+        while True: 
+            trimmed = guess.strip() 
+            if trimmed.lower() == "q":
                 print("Exiting guessing game")
-                break
-            elif " " in guess.strip():
+                return
+            elif " " in trimmed:
                 guess = input("Can only accept one argument at a time! Guess again: ")
-            elif not guess.strip().isdigit():
+            elif not trimmed.isdigit():
                 guess = input("Input must be an integer! Guess again: ")
             else:
                 num_guess = int(guess)
