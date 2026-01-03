@@ -18,7 +18,7 @@ def main():
         if trimmed.lower() == "q":
             print("Exiting fizzbuzz")
             break
-        elif " " in trimmed:
+        elif " " in trimmed or "\t" in trimmed:
             print("Can only accept one argument!")
         elif not trimmed.isdigit():
             print("Input must be a positive integer!")
