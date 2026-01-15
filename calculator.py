@@ -17,7 +17,7 @@ def main():
         if user_in.lower().strip() == "q":
             print("Exiting calculator")
             break
-        params: list[str] = re.findall(r'(?:^|(?<=[+\-*/]))-?\w+(?:\.\w+)?|[+\-*/]', user_in.replace(" ", ""))
+        params: list[str] = re.findall(r'(?:^|(?<=[+\-*/]))-?(?:\w+(?:\.\w+)?|\.\w+)|[+\-*/]', user_in.replace(" ", ""))
         if len(params) != 3:
             print("There must be exactly three arguments!")
         elif not params[0].lstrip('-').isdigit():
